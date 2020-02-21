@@ -7,7 +7,6 @@ const fs = require('fs');
 const readline = require('readline');
 const file = readline.createInterface({
   input: fs.createReadStream('voters.csv')
-  console.log('read the lines already')
 });
 
 const voters = [];
@@ -19,14 +18,11 @@ file.on('line', function(line) {
     Zip_code: Number(columns[2]),
     Voter_history: columns[3]
   }));
-  console.log('saved one')
 });
 
 
-const saves = voters.map(d => d.save());
-
-Promise.all(saves)
-  .then(()=>mongoose.connection.dropDatabase())
+mongoose.connection.dropDatabase()
+  .then(() => voters.map(d => d.save()))
   .then(() => mongoose.connection.close())
   .then(() => console.log('Database is ready.'))
   .catch(error => console.error(error.stack));
