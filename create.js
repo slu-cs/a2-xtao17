@@ -21,7 +21,7 @@ file.on('line', function(line) {
 });
 
 
-const saves = voters.map(d => d.save());
+
 
 Promise.all(saves)
   .then(() =>voters.map(d => d.save()))
