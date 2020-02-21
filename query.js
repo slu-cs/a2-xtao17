@@ -9,4 +9,4 @@ const queries = [
 Promise.all(queries)
   .then(function(results){
     console.log('Number of voters with zip code:13617', results[0].length);
-  }
+  }).catch(error => console.error(error.stack));
