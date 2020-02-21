@@ -24,7 +24,7 @@ file.on('line', function(line) {
 const saves = voters.map(d => d.save());
 
 Promise.all(saves)
-  .then(saves =>voters.map(d => d.save()))
+  .then(() =>voters.map(d => d.save()))
   .then(() => mongoose.connection.close())
   .then(() => console.log('Database is ready.'))
   .catch(error => console.error(error.stack));
