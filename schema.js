@@ -1,4 +1,3 @@
-/Define a plan for a collection
 
 const mongoose=require('mongoose');
 //Schema for a collection of professors
