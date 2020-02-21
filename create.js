@@ -12,12 +12,12 @@ const file = readline.createInterface({
 const voters = [];
 file.on('line', function(line) {
   const columns = line.split(',');
-  voters.push({
+  voters.push(new RegistedVoter({
     first_name: columns[0],
     last_name: columns[1],
     Zip_code: Number(columns[2]),
-    Voter_history: columns[3],
-  });
+    Voter_history: columns[3]
+  }));
 });
 
 
