@@ -8,6 +8,7 @@ const readline = require('readline');
 const file = readline.createInterface({
   input: fs.createReadStream('voters.csv')
 });
+
 const voters = [];
 file.on('line', function(line) {
   const columns = line.split(',');
@@ -21,6 +22,8 @@ file.on('line', function(line) {
 
 
 const saves = voters.map(d => d.save());
+
 Promise.all(saves)
   .then(() => console.log('All saved'))
+  .then(()=>mongoose.connection.dropDatabase())
   .catch(error => console.log(error.stack));

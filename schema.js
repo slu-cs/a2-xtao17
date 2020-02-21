@@ -9,11 +9,11 @@ const RegistedVoter = new mongoose.Schema({
 });
 
 //Speed up queries on all fields
-RegistedVoter.index({n_registered_voter:1});
+
 RegistedVoter.index({first_name:1});
 RegistedVoter.index({last_name:1});
-RegistedVoter.index({n_2016Election:1});
-RegistedVoter.index({n_zipcode:1});
+RegistedVoter.index({Zip_code:1});
+RegistedVoter.index({Voter_history:1});
 //complete and export this Schema
 
 module.exports =mongoose. model('RegistedVoter', RegistedVoter);
