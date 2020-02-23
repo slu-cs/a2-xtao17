@@ -10,6 +10,6 @@ const queries = [
 Promise.all(queries)
   .then(function(results){
   console.log('Number of voters with zip code 13617:', results[0]);
-  
-  console.log('How many zip codes does the county contain?',result[3]);
+
+  console.log('How many zip codes does the county contain?',result[1]);
   }).catch(error => console.error(error.stack));
