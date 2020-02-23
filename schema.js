@@ -5,7 +5,7 @@ const RegistedVoter = new mongoose.Schema({
   first_name: String,
   last_name:String,
   Zip_code:Number,
-  Voter_history:Number
+  Voter_history:String
 });
 
 //Speed up queries on all fields
