@@ -13,6 +13,6 @@ Promise.all(queries)
   .then(function(results){
   console.log('Number of voters with zip code 13617:', results[0].length);
   console.log('Full Names of all registed voters with first name STARR:',results[1].map(p=>p.first_name+' '+p.last_name));
-  console.log('Number of people voted in the 2016 general election:',results[2]);
+  console.log('Number of people voted in the 2016 general election:',results[2].length);
   console.log('How many zip codes does the county contain?',results[3].length);
   }).catch(error => console.error(error.stack));
