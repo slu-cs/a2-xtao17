@@ -4,7 +4,7 @@ const RegistedVoter = require('./schema');
 
 connect(); // To the database
 const queries = [
-  RegistedVoter.find()
+  RegistedVoter.find().where('Zip_code').equal('13617')
 ]
 Promise.all(queries)
   .then(function(results){
