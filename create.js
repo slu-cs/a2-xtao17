@@ -18,12 +18,13 @@ file.on('line', function(line) {
     first_name: columns[0],
     last_name: columns[1],
     Zip_code: Number(columns[2]),
-    Voter_history: columns[3]
+    Voter_history: columns.slice[3]
   }));
 });
-
-mongoose.connection.dropDatabase()
-  .then(() => Promise.all(voters.map(d => d.save())))
-  .then(() => mongoose.connection.close())
-  .then(() => console.log('Database is ready.'))
-  .catch(error => console.error(error.stack));
+file.on('close', function(){
+  mongoose.connection.dropDatabase()
+    .then(() => Promise.all(voters.map(d => d.save())))
+    .then(() => mongoose.connection.close())
+    .then(() => console.log('Database is ready.'))
+    .catch(error => console.error(error.stack));
+}
