@@ -7,7 +7,9 @@ const queries = [
   RegistedVoter.find().where('Zip_code').equals('13617'),
   RegistedVoter.find().where('first_name').equals('STARR'),
   RegistedVoter.find({'Voter_history':{$regex:/GE16/}}),
+  RegistedVoter..find().sort('-started').limit(1),
   RegistedVoter.distinct('Zip_code')
+
 ]
 Promise.all(queries)
   .then(function(results){
