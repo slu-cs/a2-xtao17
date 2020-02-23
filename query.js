@@ -6,7 +6,7 @@ connect(); // To the database
 const queries = [
   RegistedVoter.find().where('Zip_code').equals('13617'),
   RegistedVoter.find().where('first_name').equals('STARR'),
-  RegistedVoter.find().where('Voter_history').in('GE16'),
+  RegistedVoter.find({'Voter_history':{$regex:/GE16/}}),
   RegistedVoter.distinct('Zip_code')
 ]
 Promise.all(queries)
