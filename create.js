@@ -17,7 +17,7 @@ file.on('line', function(line) {
   voters.push(new RegistedVoter({
     first_name: columns[0],
     last_name: columns[1],
-    Zip_code: Number(columns[2]),
+    Zip_code: columns[2],
     Voter_history: columns.slice[3]
   }));
 });
