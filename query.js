@@ -6,7 +6,7 @@ connect(); // To the database
 const queries = [
   RegistedVoter.find().where('Zip_code').equals('13617').count(),
   RegistedVoter.find().where('first_name').equals('STARR'),
-  RegistedVoter.find().where('history').in('GE16'),
+  RegistedVoter.find().where('history').in('GE16').count(),
   RegistedVoter.distinct('Zip_code')
 ]
 Promise.all(queries)

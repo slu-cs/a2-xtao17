@@ -18,7 +18,7 @@ file.on('line', function(line) {
     first_name: columns[0],
     last_name: columns[1],
     Zip_code: columns[2],
-    Voter_history: columns.slice(2)
+    Voter_history: columns.slice(3)
   }));
 });
 file.on('close', function(){
