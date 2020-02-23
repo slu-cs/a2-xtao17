@@ -4,7 +4,7 @@ const RegistedVoter = require('./schema');
 
 connect(); // To the database
 const queries = [
-  RegistedVoter.find('last_name')
+  RegistedVoter.find()
 ]
 Promise.all(queries)
   .then(function(results){
