@@ -4,8 +4,8 @@ const RegistedVoter = require('./schema');
 
 connect(); // To the database
 const queries = [
-  RegistedVoter.find().where('Zip_code').equals('13617').count()
-  RegistedVoter.find().where('first_name').equals('STARR')
+  RegistedVoter.find().where('Zip_code').equals('13617').count(),
+  RegistedVoter.find().where('first_name').equals('STARR'),
   RegistedVoter.find().where('history').contain('GE16').count(),
   RegistedVoter.distinct('Zip_code')
 ]
